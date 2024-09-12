@@ -1,134 +1,134 @@
-@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500;700&display=swap');
 
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-Thin.woff2") format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-Thin.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-Thin.woff2') format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-Thin.woff') format('woff');
   font-style: normal;
   font-weight: 100;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-ThinItalic.woff2") format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-ThinItalic.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-ThinItalic.woff2') format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-ThinItalic.woff') format('woff');
   font-style: italic;
   font-weight: 100;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-ExtraLight.woff2") format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-ExtraLight.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-ExtraLight.woff2') format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-ExtraLight.woff') format('woff');
   font-style: normal;
   font-weight: 200;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-ExtraLightItalic.woff2")
-      format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-ExtraLightItalic.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-ExtraLightItalic.woff2')
+      format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-ExtraLightItalic.woff') format('woff');
   font-style: italic;
   font-weight: 200;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-Light.woff2") format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-Light.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-Light.woff2') format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-Light.woff') format('woff');
   font-style: normal;
   font-weight: 300;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-LightItalic.woff2")
-      format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-LightItalic.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-LightItalic.woff2')
+      format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-LightItalic.woff') format('woff');
   font-style: italic;
   font-weight: 300;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-Regular.woff2") format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-Regular.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-Regular.woff2') format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-Regular.woff') format('woff');
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-Italic.woff2") format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-Italic.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-Italic.woff2') format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-Italic.woff') format('woff');
   font-style: italic;
   font-weight: 400;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-Medium.woff2") format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-Medium.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-Medium.woff2') format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-Medium.woff') format('woff');
   font-style: normal;
   font-weight: 500;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-MediumItalic.woff2")
-      format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-MediumItalic.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-MediumItalic.woff2')
+      format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-MediumItalic.woff') format('woff');
   font-style: italic;
   font-weight: 500;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-SemiBold.woff2") format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-SemiBold.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-SemiBold.woff2') format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-SemiBold.woff') format('woff');
   font-style: normal;
   font-weight: 600;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-SemiBoldItalic.woff2")
-      format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-SemiBoldItalic.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-SemiBoldItalic.woff2')
+      format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-SemiBoldItalic.woff') format('woff');
   font-style: italic;
   font-weight: 600;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-Bold.woff2") format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-Bold.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-Bold.woff2') format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-Bold.woff') format('woff');
   font-style: normal;
   font-weight: 700;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-BoldItalic.woff2") format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-BoldItalic.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-BoldItalic.woff2') format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-BoldItalic.woff') format('woff');
   font-style: italic;
   font-weight: 700;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-ExtraBold.woff2") format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-ExtraBold.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-ExtraBold.woff2') format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-ExtraBold.woff') format('woff');
   font-style: normal;
   font-weight: 800;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-ExtraBoldItalic.woff2")
-      format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-ExtraBoldItalic.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-ExtraBoldItalic.woff2')
+      format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-ExtraBoldItalic.woff') format('woff');
   font-style: italic;
   font-weight: 800;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-Black.woff2") format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-Black.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-Black.woff2') format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-Black.woff') format('woff');
   font-style: normal;
   font-weight: 900;
 }
 @font-face {
-  font-family: "Saira Extra Condensed";
-  src: url("./fonts/woff2/SairaExtraCondensed-BlackItalic.woff2")
-      format("woff2"),
-    url("./fonts/woff/SairaExtraCondensed-BlackItalic.woff") format("woff");
+  font-family: 'Saira Extra Condensed';
+  src: url('./fonts/woff2/SairaExtraCondensed-BlackItalic.woff2')
+      format('woff2'),
+    url('./fonts/woff/SairaExtraCondensed-BlackItalic.woff') format('woff');
   font-style: italic;
   font-weight: 900;
 }
