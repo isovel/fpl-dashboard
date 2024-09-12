@@ -81,7 +81,6 @@ const LeaderboardPage = () => {
         <LeaderboardContainer>
           <LeaderboardHeader>
             <span>{lang.get('LEADERBOARD_HEADER_POSITION_LABEL')}</span>
-            <span>REGION</span>
             <span>{lang.get('LEADERBOARD_HEADER_NAME_LABEL')}</span>
             <span>{lang.get('LEADERBOARD_HEADER_SCORE_LABEL')}</span>
           </LeaderboardHeader>
@@ -176,11 +175,6 @@ const LeaderboardHeader = styled.li`
     }
 
     &:nth-of-type(2) {
-      width: 10px;
-      text-align: right;
-    }
-
-    &:nth-of-type(3) {
       width: 70%;
       text-align: left;
     }
