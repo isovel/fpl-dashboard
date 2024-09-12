@@ -13,9 +13,9 @@ import {
 
 // API data model mockup
 const leaderboards = {
-  [Division.S]: generateRandomLeaderboard(10, Region.NA, Division.S),
-  [Division.A]: generateRandomLeaderboard(100, Region.NA, Division.A),
-  [Division.B]: generateRandomLeaderboard(500, Region.NA, Division.B),
+  [Division.S]: generateRandomLeaderboard(10, Division.S),
+  [Division.A]: generateRandomLeaderboard(100, Division.A),
+  [Division.B]: generateRandomLeaderboard(500, Division.B),
 }
 
 const calcNumPages = (leaderboard: Contestant[]) =>
@@ -58,17 +58,18 @@ const LeaderboardPage = () => {
         </TabSelectorContainer>
         <TabSelectorContainer>
           <SelectedContainer>
-            <h1>{lang.get(`REGION_${reg}_LABEL`)}</h1>
+            {/* <h1>{lang.get(`REGION_${reg}_LABEL`)}</h1> */}
+            <h1>{'ALL'}</h1>
           </SelectedContainer>
           <TabButtonContainer>
             <TabButton
-              disabled={reg === Region.NA}
+              disabled={reg === Region.NA || true}
               onClick={() => setReg(Region.NA)}
             >
               {lang.REGION_NA_LABEL}
             </TabButton>
             <TabButton
-              disabled={reg === Region.EU}
+              disabled={reg === Region.EU || true}
               onClick={() => setReg(Region.EU)}
             >
               {lang.REGION_EU_LABEL}
@@ -80,12 +81,14 @@ const LeaderboardPage = () => {
         <LeaderboardContainer>
           <LeaderboardHeader>
             <span>{lang.get('LEADERBOARD_HEADER_POSITION_LABEL')}</span>
+            <span>REGION</span>
             <span>{lang.get('LEADERBOARD_HEADER_NAME_LABEL')}</span>
             <span>{lang.get('LEADERBOARD_HEADER_SCORE_LABEL')}</span>
           </LeaderboardHeader>
           {leaderboard.slice(cursor, cursor + 10).map((entry, i) => (
             <LeaderboardEntry key={i}>
               <span>{entry.position}</span>
+              <span>{entry.region}</span>
               <span>{entry.embarkId}</span>
               <span>{entry.kdr}</span>
             </LeaderboardEntry>
@@ -173,6 +176,11 @@ const LeaderboardHeader = styled.li`
     }
 
     &:nth-of-type(2) {
+      width: 10px;
+      text-align: right;
+    }
+
+    &:nth-of-type(3) {
       width: 70%;
       text-align: left;
     }
@@ -209,6 +217,13 @@ const LeaderboardEntry = styled.li`
     }
 
     &:nth-of-type(2) {
+      width: fit-content;
+      font-family: 'Saira Condensed';
+      font-size: 0.8em;
+      text-align: right;
+    }
+
+    &:nth-of-type(3) {
       width: 70%;
       text-align: left;
     }

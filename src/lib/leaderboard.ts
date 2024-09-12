@@ -158,14 +158,13 @@ const generateKDM = (
 
 export const generateRandomLeaderboard = (
   entries: number,
-  region: Region,
   division: Division
 ): Leaderboard => {
   const contestants: Omit<Contestant, 'position'>[] = []
   for (let i = 1; i <= entries; i++) {
     contestants.push({
       embarkId: generateEmbarkId(),
-      region,
+      region: pullRandomElement(Object.values(Region)),
       division,
       ...generateKDM(division),
     })
