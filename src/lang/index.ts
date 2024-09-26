@@ -33,7 +33,7 @@ const get = (key: keyof typeof en) => {
 
 const lang = {
   get,
-  ...en,
+  ...langDataFromCode(getLang().language),
 }
 
 export default lang

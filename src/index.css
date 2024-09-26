@@ -27,7 +27,7 @@
 
   color-scheme: light dark;
   color: var(--brand-neutral-light);
-  background-color: var(--brand-color-primary);
+  background-color: var(--brand-neutral-dark);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -38,12 +38,15 @@
 #root {
   margin: 0;
   text-align: center;
+  width: 100%;
 }
 
 a {
   font-weight: 500;
   color: var(--brand-color-secondary);
   text-decoration: inherit;
+  user-select: none;
+  transition: color 100ms ease-in-out;
 }
 a:hover {
   color: rgba(var(--brand-color-secondary-rgb), 0.8);
@@ -54,6 +57,8 @@ body {
   display: flex;
   min-width: 100vw;
   min-height: 100vh;
+  background-color: var(--brand-color-primary);
+  background: url(./images/static_bkg.png) no-repeat center center fixed;
 }
 
 h1 {
@@ -62,13 +67,35 @@ h1 {
   font-weight: 800;
   font-size: 1.8em;
   line-height: 1.1;
+  text-transform: uppercase;
+  user-select: none;
   margin: 0;
 }
 
 h2 {
   font-family: 'Saira Extra Condensed', 'Saira Condensed', sans-serif;
   font-style: italic;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.5em;
   line-height: 1.2;
+  text-transform: uppercase;
+  user-select: none;
+  margin: 0;
+}
+
+span {
+  white-space: nowrap;
+}
+
+@keyframes button-glow {
+  from {
+    box-shadow: 0 0 2px 1px var(--brand-neutral-light),
+      0 0 4px 2px var(--button-glow-color),
+      0 0 16px 2px var(--button-glow-color);
+  }
+  to {
+    box-shadow: 0 0 2px 1px var(--brand-neutral-light),
+      0 0 4px 2px var(--button-glow-color),
+      0 0 18px 8px var(--button-glow-color);
+  }
 }

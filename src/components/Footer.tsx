@@ -1,12 +1,13 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Footer = () => (
   <Container>
-    {'Placeholder'}
+    <Link to="/">Home</Link>
     <Seperator />
-    {'Placeholder'}
+    <Link to="/leaderboard">Leaderboard</Link>
     <Seperator />
-    {'Placeholder'}
+    <Link to="/about">About</Link>
   </Container>
 )
 

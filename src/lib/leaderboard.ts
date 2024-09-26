@@ -1,6 +1,6 @@
 export enum Region {
-  NA = 'NA',
   EU = 'EU',
+  NA = 'NA',
 }
 
 export enum Division {
@@ -106,54 +106,49 @@ const generateEmbarkId = (): string => {
     .padStart(4, '0')}`
 }
 
-// Generate random K/D/M stats based on division
-// S: 10-20 eliminations (per match), 0-5 deaths (per match), 0-30 matches played
-// A: 5-10 eliminations (per match), 0-10 deaths (per match), 0-20 matches played
-// B: 0-5 eliminations (per match), 0-15 deaths (per match), 0-10 matches played
-// The K/D ratio is eliminations divided by deaths, and should generally be around 0-4
-const generateKDM = (
-  div: Division
+const _rnd = (a: number, b: number) => Math.floor(Math.random() * a) + b
+
+const generateMatchesPlayed = () => {
+  return _rnd(21, 20) // 20-40
+}
+
+const generateRandMatchKD = (div: Division): [number, number] => {
+  switch (div) {
+    case Division.S:
+      return [_rnd(6, 15), _rnd(3, 1)] // 15-20, 1-3
+    case Division.A:
+      return [_rnd(6, 8), _rnd(6, 3)] // 8-13, 3-8
+    case Division.B:
+      return [_rnd(6, 3), _rnd(11, 5)] // 3-8, 5-15
+  }
+}
+
+const generateRandKD = (
+  div: Division,
+  matchesPlayed: number
 ): {
   eliminations: number
   deaths: number
-  matchesPlayed: number
   kdr: number
 } => {
-  const stats = {
-    eliminations: 0,
-    deaths: 0,
-    matchesPlayed: 0,
-    kdr: 0,
+  const statReducer =
+    (field: number) => (prev: number, current: [number, number]) =>
+      (prev += current[field])
+  const matchStatArr = Array<[number, number]>(matchesPlayed)
+      .fill([0, 0])
+      .map((_) => generateRandMatchKD(div)),
+    eliminations: number = matchStatArr.reduce(statReducer(0), 0),
+    deaths: number = matchStatArr.reduce(statReducer(1), 0),
+    kdr =
+      deaths === 0
+        ? eliminations
+        : Math.floor((eliminations / deaths) * 10) / 10
+
+  return {
+    eliminations,
+    deaths,
+    kdr,
   }
-
-  switch (div) {
-    case Division.S:
-      // Higher eliminations, fewer deaths, more matches played
-      stats.eliminations = Math.floor(Math.random() * 6) + 15 // 15-20 eliminations
-      stats.deaths = Math.floor(Math.random() * 3) + 1 // 1-3 deaths
-      stats.matchesPlayed = Math.floor(Math.random() * 21) + 30 // 30-50 matches played
-      break
-    case Division.A:
-      // Moderate eliminations, moderate deaths, moderate matches played
-      stats.eliminations = Math.floor(Math.random() * 6) + 8 // 8-13 eliminations
-      stats.deaths = Math.floor(Math.random() * 6) + 3 // 3-8 deaths
-      stats.matchesPlayed = Math.floor(Math.random() * 21) + 20 // 20-40 matches played
-      break
-    case Division.B:
-      // Lower eliminations, higher deaths, fewer matches played
-      stats.eliminations = Math.floor(Math.random() * 6) + 3 // 3-8 eliminations
-      stats.deaths = Math.floor(Math.random() * 11) + 5 // 5-15 deaths
-      stats.matchesPlayed = Math.floor(Math.random() * 11) + 10 // 10-20 matches played
-      break
-  }
-
-  // Calculate K/D ratio with a check for zero deaths
-  stats.kdr =
-    stats.deaths === 0
-      ? stats.eliminations
-      : Math.floor((stats.eliminations / stats.deaths) * 100) / 100
-
-  return stats
 }
 
 export const generateRandomLeaderboard = (
@@ -162,11 +157,14 @@ export const generateRandomLeaderboard = (
 ): Leaderboard => {
   const contestants: Omit<Contestant, 'position'>[] = []
   for (let i = 1; i <= entries; i++) {
+    const matchesPlayed = generateMatchesPlayed()
+
     contestants.push({
       embarkId: generateEmbarkId(),
       region: pullRandomElement(Object.values(Region)),
       division,
-      ...generateKDM(division),
+      matchesPlayed,
+      ...generateRandKD(division, matchesPlayed),
     })
   }
 
@@ -180,4 +178,15 @@ export const generateRandomLeaderboard = (
   }))
 
   return leaderboard
+}
+
+export const calcNumPages = (leaderboard: Contestant[]) =>
+  Math.floor(leaderboard.length / 10 + 1) - 1
+
+export const getContestantPage = (
+  leaderboard: Contestant[],
+  embarkId: string
+) => {
+  const index = leaderboard.findIndex((c) => c.embarkId === embarkId)
+  return Math.floor(index / 10 + 1) - 1
 }

@@ -1,16 +1,20 @@
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
 import styled from 'styled-components'
 
+import ErrorBoundary from './components/ErrorBoundary'
 import Footer from './components/Footer'
 import NavBar from './components/NavBar'
+import HomePage from './features/home/HomePage'
 import LeaderboardPage from './features/leaderboard/LeaderboardPage'
 
 const Layout = () => (
   <LayoutContainer>
     <NavBar />
-    <ContentContainer>
-      <Outlet />
-    </ContentContainer>
+    <ErrorBoundary>
+      <ContentContainer>
+        <Outlet />
+      </ContentContainer>
+    </ErrorBoundary>
     <Footer />
   </LayoutContainer>
 )
@@ -19,7 +23,12 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
+    errorElement: <h1>404</h1>,
     children: [
+      {
+        path: '/',
+        element: <HomePage />,
+      },
       {
         path: 'leaderboard',
         element: <LeaderboardPage />,
@@ -28,11 +37,17 @@ const router = createBrowserRouter([
   },
 ])
 
-const ProviderScaffold = () => <RouterProvider router={router} />
+const ProviderScaffold = () => (
+  <ErrorBoundary fallbackComponent={<h1>aksdnaksdn</h1>}>
+    <RouterProvider router={router} />
+  </ErrorBoundary>
+)
 
 const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: initial;
+  align-items: initial;
   height: 100vh;
 `
 
